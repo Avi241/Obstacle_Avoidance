@@ -29,8 +29,7 @@ $ rosrun sjtu_drone drone_keyboard
 ```
 # Steps 
 
-Press Z to takeoff
-Now you can control your drone with keyboars as shown in the Gui
+Press Z to takeoff.   Now you can control your drone with keyboars as shown in the Gui
 
 
 # For obstacle avoidance you need to modify the following code 
