@@ -1,10 +1,9 @@
-# About sjtu_drone #
-
-sjtu_drone is a quadrotor simulation program forked from ['tum_simulator'] (http://wiki.ros.org/tum_simulator) , which is developed with ROS + Gazebo. It is used for testing visual SLAM algorithms aiding with different sensors, such as IMU, sonar range finder and laser range finder. Here by 'sjtu', it means Shanghai Jiao Tong University. Currently, this program is used for testing algorithms for [UAV contest in SJTU](http://mediasoc.sjtu.edu.cn/wordpress)
+# About  #
+This repo is a platform for testing the Obstacle avoidance alogirthm on the drone. This work uses sjtu_drone as a simulation platform.
+sjtu_drone is a quadrotor simulation program forked from ['tum_simulator'] (http://wiki.ros.org/tum_simulator) , which is developed with ROS + Gazebo.
 
 # Requirements #
-This package is compatible with ROS Melodic version (Ubuntu 18.04). Existing versions on the internet support at most until Gazebo 7. After Gazebo 8.0, the API has gone significant changes; therefore, it was necessary to adapt the package to Gazebo 8.0+ API. As the default version of Gazebo coming with ROS Melodic is 7.0, it is suggested that do not use the full installation but the desktop installation.
-
+This package is compatible with ROS Melodic version (Ubuntu 18.04).
 Please refer the following for the ['installation'](http://wiki.ros.org/Installation/Ubuntu) of ROS on your computer. Prefreable is ROS melodic with ubuntu 18.04 or ROS Noetic with Ubuntu 20.04.
 
 # Download and Compiling this package#
