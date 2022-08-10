@@ -1,6 +1,5 @@
-#!/usr/bin/env python
+#!/usr/bin/env python ## python compiler,  if using ROS Noetic change it to python3
 
-import imp
 import rospy
 import cv2
 import tf
@@ -23,9 +22,6 @@ def cb_img(data):
     global image,flag
     image = data
     flag = True
-    # for i in range(100):
-    # print("received image")
-    # print(flag)
 
 def cb_imu(data):
     global imu
@@ -56,14 +52,13 @@ def start_vel_ctrl():
     print("Started Velocity Control")
 
 def takeoff():
-    print("Take off")
     takeoff_pub.publish(Empty())
-    rospy.sleep(0.5)
+    print("Take off")
 
 def main():
-    takeoff()
-    start_vel_ctrl()
-    rospy.sleep(2)
+    takeoff() # Takeoff the drone
+    start_vel_ctrl() # Start Velocity control mode
+    rospy.sleep(2) # Delay so that drone can get height
     while not rospy.is_shutdown():
         if flag:
             cv_image = bridge.imgmsg_to_cv2(image, desired_encoding='passthrough') # To convert from ros image to opencv image
