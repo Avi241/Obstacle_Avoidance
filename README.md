@@ -32,6 +32,13 @@ $ rosrun sjtu_drone drone_keyboard
 Press Z to takeoff.   Now you can control your drone with keyboars as shown in the Gui
 
 
-# For obstacle avoidance you need to modify the following code 
+# For obstacle avoidance
 
 Go to location ~/catkin_ws/src/Obstacle_Avoidance/sjtu-drone/scripts . Open the file ```obstacle_avoidance.py ``` now you can write your obstacle avoidane algorithms here in the main function of this code.
+
+# To run obstacle avoidance program
+
+```
+rosrun sjtu_drone obstacle_avoidance.py
+
+```
