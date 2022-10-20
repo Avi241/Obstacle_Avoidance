@@ -1,5 +1,7 @@
 #!/usr/bin/env python ## python compiler,  if using ROS Noetic change it to python3
 
+from dis import dis
+from turtle import distance
 import rospy
 import cv2
 import tf
@@ -12,6 +14,17 @@ from tf.transformations import euler_from_quaternion
 bridge = CvBridge()
 rospy.init_node("Obstacle_Avoidance", anonymous=True) # initialize ros node
 
+
+#################### For frontal distance ########################
+from sensor_msgs.msg import Range
+frontal_distance = 0
+def cb_distance(data):
+    global frontal_distance
+    frontal_distance = data.range
+
+rospy.Subscriber("/drone/sonar", Range,cb_distance)
+
+###################### For Frontal Distance ##################################
 
 image= Image()
 imu = Imu()
@@ -30,6 +43,7 @@ def cb_imu(data):
 
 rospy.Subscriber("/drone/front_camera/image_raw", Image,cb_img)
 rospy.Subscriber("/drone/imu", Imu,cb_imu)
+
 vel_pub = rospy.Publisher("/cmd_vel", Twist, queue_size=10)
 vel_ctrl_pub = rospy.Publisher("/drone/vel_mode", Bool, queue_size=10)
 takeoff_pub = rospy.Publisher("/drone/takeoff", Empty, queue_size=10)
@@ -72,6 +86,7 @@ def main():
             roll = euler[0]
             pitch = euler[1]
             yaw = euler[2]
+            # print(frontal_distance)
             # print(roll,pitch,yaw)
 
             ######################### Write your Algorithm here #############
